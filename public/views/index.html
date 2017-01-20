@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--bootstrap-->
+
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <!--angularjs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="../app/app.js"></script>
+    <script src="../app/contollers/navController.js"></script>
+    <script src="../app/contollers/mycontroller.js"></script>
+    <!--angularjs-->
+
+</head>
+<body ng-app="myApp" style="background-color: cadetblue">
+
+<nav  class="navbar navbar-default"  >
+    <div class="container">
+        <div class="container-fluid" style=" margin: 0 auto;float: left">
+
+            <ul class="nav navbar-nav">
+                <li ><a href="#"><span style="color: brown;">Home</span> </a></li>
+                <li><a href="#profil"><span style="color: brown;">Profil</span></a></li>
+                <li><a href="#myCarousel/"><span style="color: brown;">Carousel</span></a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div ng-view></div>
+
+
+
+</body>
+
+</html>
