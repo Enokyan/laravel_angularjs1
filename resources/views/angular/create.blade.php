@@ -59,10 +59,10 @@
                     </thead>
 
                     <tr ng-repeat="x in data.results | filter:search">
-                        <td>{{$index+1}}</td>
-                        <td>{{x.firstName}}</td>
-                        <td>{{x.lastName}}</td>
-                        <td>{{x.age}}</td>
+                        <td><%$index+1%></td>
+                        <td><%x.firstName%></td>
+                        <td><%x.lastName%></td>
+                        <td><%x.age%></td>
                         <td><button ng-click="Update($index)" class="btn btn-default form-control">Update</button></td>
                         <td><button ng-click="Delete($index)" class="btn btn-default form-control">Delete</button></td>
                     </tr>

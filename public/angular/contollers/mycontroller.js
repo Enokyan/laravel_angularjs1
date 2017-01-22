@@ -1,5 +1,4 @@
 app.controller('createCtrl', function($scope) {
-    alert(123123);
     var result = {
         results: []
     };
