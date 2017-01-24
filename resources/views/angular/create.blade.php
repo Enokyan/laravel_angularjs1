@@ -12,10 +12,9 @@
     <title>Index</title>
 
     <!--angularjs-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
     <script src="{{URL::asset('angular/app.js')}}"></script>
-    <script src="{{URL::asset('angular/contollers/navController.js')}}"></script>
     <script src="{{URL::asset('angular/contollers/mycontroller.js')}}"></script>
     <!--angularjs-->
 
@@ -26,9 +25,9 @@
 
         <div  ng-controller="createCtrl">
             <div class="myform" style="float:left;background-color: chartreuse;width: 48%">
-                <h2>First Name</h2> <input class="form-control"  type="text" ng-model="firstName"><br><br>
-                <h2>Last Name </h2><input class="form-control"  type="text" ng-model="lastName"><br><br>
-                <h2>Age </h2><input class="form-control"  type="text" ng-model="age"><br><br>
+                <h2>Name</h2> <input class="form-control"  type="text" ng-model="name"><br><br>
+                <h2>Type </h2><input class="form-control"  type="text" ng-model="type"><br><br>
+                <h2>Price </h2><input class="form-control"  type="text" ng-model="age"><br><br>
                 <br>
 
                 <button ng-click="insert()"  class="btn btn-default form-control" ng-show="!t">Insert</button>
@@ -57,11 +56,10 @@
                         <th>Delete</th>
                     </tr>
                     </thead>
-
                     <tr ng-repeat="x in data.results | filter:search">
                         <td><%$index+1%></td>
-                        <td><%x.firstName%></td>
-                        <td><%x.lastName%></td>
+                        <td><%x.name%></td>
+                        <td><%x.type%></td>
                         <td><%x.age%></td>
                         <td><button ng-click="Update($index)" class="btn btn-default form-control">Update</button></td>
                         <td><button ng-click="Delete($index)" class="btn btn-default form-control">Delete</button></td>

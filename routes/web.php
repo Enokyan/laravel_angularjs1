@@ -14,3 +14,22 @@ Route::get('/test', 'TestController@index');
 
 //angular
 Route::get('/createAng', 'CreateangularController@index');
+/////ajax angular ////////
+Route::post('api/create', 'CreateangularController@create');
+
+///////api select
+Route::get('api/select', 'PostController@selectPost');
+
+//selectPost
+Route::post('api/selectPost', 'PostController@selectMyPost');
+//delete angular
+Route::post('api/delete', 'PostController@DeletePost');
+//updatePost
+Route::post('api/UpdatePost', 'PostController@UpdatePost');
+
+
+/////////////todo/////
+Route::resource('api/todos','TodosController@store');
+
+//route to add
+Route::get('todoapp','TodoAppController@index');
