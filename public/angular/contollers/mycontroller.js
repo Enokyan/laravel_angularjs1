@@ -4,6 +4,7 @@ app.controller('createCtrl', function($scope,$http,$log) {
     };
     $scope.t=false;
     $scope.insert=function () {
+
         $scope.data=result;
         if($scope.name && $scope.type &&  $scope.age) {
             $scope.data.results.push( {
@@ -11,37 +12,38 @@ app.controller('createCtrl', function($scope,$http,$log) {
                 type:$scope.type,
                 age: $scope.age});
 
-
+            // $http.post('api/create', {
+            //     name: $scope.name,
+            //     type: $scope.type,
+            //     price : $scope.age
+            // })
             $http.post('api/create', {
+                file: $scope.myfile,
                 name: $scope.name,
                 type: $scope.type,
                 price : $scope.age
-            }).then(function(response) {
-                $log.info(response);
-            });
-
+            })
+            console.log($scope.myfile);
             $scope.name = ''; $scope.type = '';  $scope.age = '';
         }
+    };
+    $scope.Upload = function(event){
+        if(event.target.files[0])  {
 
-    }
-    $scope.Delete = function(index){
-        $scope.data.results.splice(index,1)
+            var files = event.target.files[0];
+                $scope.myfile=files;
+
+                reader= new FileReader();
+                reader.onload = function(e){
+                    $scope.image=e.target.result;
+                    $scope.$apply();
+            };
+            reader.readAsDataURL(files);
+            $scope.fileEvent = event;        }
+        else
+            $scope.step="";
+
     };
-    $scope.Update = function(index){
-        var data=$scope.data.results[index];
-        $scope.index=index;
-        $scope.name=data.name;
-        $scope.type=data.type;
-        $scope.age=data.age;
-        $scope.t=true;
-    };
-    $scope.tableUpdate=function () {
-        var index=$scope.index;
-        $update = $scope.data.results[index];
-        $update['name']=$scope.name;
-        $update['type']=$scope.type;
-        $update['age']=$scope.age;
-        $scope.t=false;
-        $scope.name = ''; $scope.type = '';  $scope.age = '';
-    }
+
+
 });

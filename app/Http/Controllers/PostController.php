@@ -15,9 +15,7 @@ class PostController extends Controller
         $posts = Post::select('*')->get();
         return $posts;
     }
-
     public function DeletePost(){
-//        $result='true';
         $result= Request::all();
         Post::where('id', '=', $result['id'])->delete();
         return 1;
@@ -25,8 +23,6 @@ class PostController extends Controller
     public function UpdatePost(){
     $result= Request::all();
         Post::where('id', '=', $result['id'])->update(['name' => $result['name'],'type'=>  $result['type'],'price'=> $result['price']]);
-
         return $result;
-
-}
+    }
 }

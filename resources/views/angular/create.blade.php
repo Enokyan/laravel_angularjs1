@@ -23,51 +23,22 @@
     <div  class='container' style='width:90%; margin-top:2%; background-color: aquamarine'>
 
 
+
         <div  ng-controller="createCtrl">
-            <div class="myform" style="float:left;background-color: chartreuse;width: 48%">
+            <div class="myform" >
                 <h2>Name</h2> <input class="form-control"  type="text" ng-model="name"><br><br>
                 <h2>Type </h2><input class="form-control"  type="text" ng-model="type"><br><br>
                 <h2>Price </h2><input class="form-control"  type="text" ng-model="age"><br><br>
+                <h2>Image <img  ng-src="<%image%>" alt="" width="50px"> </h2>
+                <input  class="form-control"  type="file" onchange="angular.element(this).scope().Upload(event)">
+
                 <br>
 
                 <button ng-click="insert()"  class="btn btn-default form-control" ng-show="!t">Insert</button>
-                <button ng-click="tableUpdate()"  class="btn btn-default form-control" ng-show="t">Update</button>
+
+                <br><br><br>
+
             </div>
-
-
-
-            <div class="input-group" style="width: 30%;float:right;margin-top: 7px">
-                <input type="text" class="  search-query form-control" placeholder="Search" ng-model="search" />
-                <br><br>
-            </div>
-
-
-
-            <div class="result" style="float:right;background-color: chartreuse;width: 48%">
-
-                <table border="1px solid" class="table table-hover" style="margin-top: 20px">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Age</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                    </tr>
-                    </thead>
-                    <tr ng-repeat="x in data.results | filter:search">
-                        <td><%$index+1%></td>
-                        <td><%x.name%></td>
-                        <td><%x.type%></td>
-                        <td><%x.age%></td>
-                        <td><button ng-click="Update($index)" class="btn btn-default form-control">Update</button></td>
-                        <td><button ng-click="Delete($index)" class="btn btn-default form-control">Delete</button></td>
-                    </tr>
-                </table>
-            </div>
-
-
         </div>
 
     </div>

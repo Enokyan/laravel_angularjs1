@@ -27,9 +27,6 @@ Route::post('api/delete', 'PostController@DeletePost');
 //updatePost
 Route::post('api/UpdatePost', 'PostController@UpdatePost');
 
+//carusel (slider)
 
-/////////////todo/////
-Route::resource('api/todos','TodosController@store');
-
-//route to add
-Route::get('todoapp','TodoAppController@index');
+Route::get('myCarousel', 'PostController@myCarousel');

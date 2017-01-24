@@ -1,16 +1,10 @@
 appPost.controller('PostCtrl', function($scope,$http,$log) {
 
-    $scope.posts;
-
-
     $http.post('selectPost', {
     }).then(function(response) {
         $scope.posts=response.data;
     });
-
     $scope.DeletePost = function(id){
-
-         console.log(id);
         $http.post('delete', {
             id: id
         })
@@ -32,15 +26,11 @@ appPost.controller('PostCtrl', function($scope,$http,$log) {
             name: $scope.name,
             type: $scope.type,
             price : $scope.price
-        }).then(function(response) {
-            $log.info(response);
-        });
-
+        })
         $update = $scope.posts[index];
         $update['name']=$scope.name;
         $update['type']=$scope.type;
         $update['price']=$scope.price;
-
         $scope.name = ''; $scope.type = '';  $scope.price = '';
     }
 });

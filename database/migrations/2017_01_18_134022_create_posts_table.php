@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->integer('price')->defaulte(0);
+            $table->string('image');
             $table->rememberToken();
             $table->timestamps();
         });

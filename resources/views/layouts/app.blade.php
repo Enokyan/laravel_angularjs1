@@ -43,7 +43,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;<li><a href="{{ url('/createAng') }}">Angular_Create</a></li>
+                        &nbsp;<li><a href="{{ url('/createAng') }}">Add</a></li>
+                        <li><a href="{{ url('api/select') }}">Result</a></li>
+                        <li><a href="{{ url('/myCarousel') }}">Carousel</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
