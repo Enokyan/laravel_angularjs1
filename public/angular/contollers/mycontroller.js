@@ -18,7 +18,7 @@ app.controller('createCtrl', function($scope,$http,$log) {
             //     price : $scope.age
             // })
             $http.post('api/create', {
-                file: $scope.myfile,
+                // file: $scope.myfile,
                 name: $scope.name,
                 type: $scope.type,
                 price : $scope.age

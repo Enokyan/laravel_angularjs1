@@ -58,7 +58,9 @@
                          <td><%post.price%></td>
                           <td><button ng-click="UpdatePost($index,post.id)"  type="button" class="btn btn-default form-control" data-toggle="modal" data-target="#myModal">Open Modal</button> </td>
                           <td> <button ng-click="DeletePost(post.id)" class="btn btn-default form-control">Delete</button></td>
-                          <td> <button ng-click="MagazinPost(post.id)" class="btn btn-default form-control">Magazin</button></td>
+                          <td>
+                              <a ng-href="add-to-cart/<%post.id%>"class="btn btn-default form-control" role="button" > Add To Cart</a>
+                              {{--<button ng-click="MagazinPost(post.id)" class="btn btn-default form-control">Magazin</button></td>--}}
                       </tr>
 
 

@@ -16,7 +16,7 @@ class CreateangularController extends Controller
     }
     public function create(){
         $result= Request::all();
-        return $result['file'];
+//        return $result['file'];
 //        if ($result->hasFile('file')) {
 //            $file = $result->file('file');
 //            $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -24,13 +24,13 @@ class CreateangularController extends Controller
 //            $img_name = $filename;
 //        } else
 //            $img_name = 0;
-//        Post::create([
-//            'user_id'=> Auth::id(),
-//            'name'=> $result['name'],
-//            'type'=>  $result['type'],
-//            'price'=> $result['price'],
+        Post::create([
+            'user_id'=> Auth::id(),
+            'name'=> $result['name'],
+            'type'=>  $result['type'],
+            'price'=> $result['price'],
 //            'image'=> $img_name,
-//        ]);
-//        return $result;
+        ]);
+        return $result;
     }
 }

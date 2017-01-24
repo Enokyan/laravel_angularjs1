@@ -11,6 +11,7 @@ appPost.controller('PostCtrl', function($scope,$http,$log) {
         var articleRow = angular.element(document.querySelector('tr[id="'+id+'"]'));
         articleRow.remove();
     };
+
     $scope.UpdatePost = function(index,id){
         var data=$scope.posts[index];
         $scope.index=index;

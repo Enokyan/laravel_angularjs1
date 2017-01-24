@@ -13,6 +13,15 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -46,6 +55,13 @@
                         &nbsp;<li><a href="{{ url('/createAng') }}">Add</a></li>
                         <li><a href="{{ url('api/select') }}">Result</a></li>
                         <li><a href="{{ url('/myCarousel') }}">Carousel</a></li>
+                        <li style="float:right">
+                            <a href="{{ route('post.shoppingCart') }}">
+                                <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+                                <span class="bande">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                            </a>
+                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
