@@ -54,7 +54,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;<li><a href="{{ url('/createAng') }}">Add</a></li>
                         <li><a href="{{ url('api/select') }}">Result</a></li>
-                        <li><a href="{{ url('/myCarousel') }}">Carousel</a></li>
+                        <li><a href="{{ url('#') }}">Carousel</a></li>
                         <li style="float:right">
                             <a href="{{ route('post.shoppingCart') }}">
                                 <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart

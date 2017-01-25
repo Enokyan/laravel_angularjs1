@@ -27,6 +27,16 @@
     </head>
 
     <body ng-app="myAppPost" style="background-color: cadetblue">
+    @if(Session::has('success'))
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-4 " >
+                <div id="charge-message" class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            </div>
+        </div>
+    @endif
+
     <div  class='container' style='width:90%; margin-top:2%; background-color: aquamarine'>
 
 

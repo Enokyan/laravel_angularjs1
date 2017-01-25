@@ -24,6 +24,19 @@ Route::get('api/select',
      'as'=>'post.index'
     ]);
 
+
+//getchekout
+Route::get('api/checkout',
+    ['uses' => 'PostController@getCheckout',
+        'as'=>'checkout'
+    ]);
+
+//postchekout
+Route::post('api/checkout',
+    ['uses' => 'PostController@postCheckout',
+        'as'=>'checkout'
+    ]);
+
 //selectPost
 //Route::post('api/selectPost', 'PostController@selectMyPost');
 Route::post('api/selectPost', ['uses' => 'PostController@selectMyPost']);
