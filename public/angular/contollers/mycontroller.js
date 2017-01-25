@@ -1,4 +1,4 @@
-app.controller('createCtrl', function($scope,$http,$log) {
+app.controller('createCtrl', function($scope,$http,$log,Upload) {
     var result = {
         results: []
     };
@@ -12,18 +12,22 @@ app.controller('createCtrl', function($scope,$http,$log) {
                 type:$scope.type,
                 age: $scope.age});
 
-            // $http.post('api/create', {
-            //     name: $scope.name,
-            //     type: $scope.type,
-            //     price : $scope.age
-            // })
-            $http.post('api/create', {
-                // file: $scope.myfile,
-                name: $scope.name,
-                type: $scope.type,
-                price : $scope.age
-            })
+
+            formData = new FormData();
+            formData.append('file', $scope.myfile);
+            formData.append('name', $scope.name);
+            formData.append('type', $scope.type);
+            formData.append('price', $scope.age);
+
             console.log($scope.myfile);
+            $http({
+                url:'api/create',
+                method: "POST",
+                data: formData,
+                headers: {'Content-Type': undefined},
+
+            })
+
             $scope.name = ''; $scope.type = '';  $scope.age = '';
         }
     };
@@ -32,6 +36,7 @@ app.controller('createCtrl', function($scope,$http,$log) {
 
             var files = event.target.files[0];
                 $scope.myfile=files;
+
 
                 reader= new FileReader();
                 reader.onload = function(e){

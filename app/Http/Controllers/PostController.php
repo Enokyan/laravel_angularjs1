@@ -77,7 +77,7 @@ class PostController extends Controller
                 "description" => "Test Charge"
             ));
         } catch (\Exception $e){
-            return redirect()->route('chechout')->with('error', $e->getMessage());
+            return redirect()->route('checkout')->with('error', $e->getMessage());
         }
         Session::forget('cart');
         return redirect()->route('post.index')->with('success', 'Successfully purchased posts!');

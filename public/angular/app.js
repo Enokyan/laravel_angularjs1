@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ["ngRoute"], function($interpolateProvider) {
+var app = angular.module('myApp', ["ngRoute",'ngFileUpload'], function($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 });
