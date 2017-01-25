@@ -44,7 +44,7 @@ Route::post('api/selectPost', ['uses' => 'PostController@selectMyPost']);
 Route::get('shooping-cart',[
     'uses' => 'PostController@getCart',
     'as'=>'post.shoppingCart'
-    ]);
+]);
 //delete angular
 Route::post('api/delete', 'PostController@DeletePost');
 //updatePost
@@ -54,3 +54,19 @@ Route::get('api/add-to-cart/{id}', ['uses' => 'PostController@getAddToCart', 'as
 //carusel (slider)
 
 Route::get('myCarousel', 'PostController@myCarousel');
+
+
+
+//ionic Arturin tam api
+
+
+Route::post('ionic/api/registr', [
+    'uses' => 'RegistrionicController@registr',
+    'as'=>'registr'
+]);
+
+
+Route::post('ionic/api/login',[
+    'uses' => 'LoginionicController@login',
+    'as'=>'login'
+]);
