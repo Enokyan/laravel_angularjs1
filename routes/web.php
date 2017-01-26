@@ -59,14 +59,24 @@ Route::get('myCarousel', 'PostController@myCarousel');
 
 //ionic Arturin tam api
 
+//myauth
+Route::get('api/myauth', 'MyauthController@index');
 
-Route::post('ionic/api/registr', [
+Route::post('/api/myauth/registr', [
     'uses' => 'RegistrionicController@registr',
     'as'=>'registr'
 ]);
 
 
-Route::post('ionic/api/login',[
+Route::get('api/registr', function() {
+    return View('myauth/registr');
+});
+
+Route::get('api/login', function() {
+    return View('myauth/login');
+});
+
+Route::post('/api/myauth/login',[
     'uses' => 'LoginionicController@login',
     'as'=>'login'
 ]);

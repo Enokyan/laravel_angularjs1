@@ -1,12 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
+
+                        @if(Session::has('error'))
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-4 " >
+                                    <div id="charge-message" class="alert alert-success">
+                                        {{ Session::get('error') }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
@@ -48,9 +59,13 @@
                             </div>
                         </div>
 
+                        {{--rekaptcha--}}
+                        <div class="col-md-8 col-md-offset-4">
+                            <div class="g-recaptcha form-group" data-sitekey="6LdIOBMUAAAAAMT_XeeBfn6B8Bhx8Cp9cqITa0ET"></div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" id="#form" class="btn btn-primary">
                                     Login
                                 </button>
 

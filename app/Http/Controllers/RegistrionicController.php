@@ -16,7 +16,7 @@ class RegistrionicController extends Controller
         $password = $data['password'];
         $result = Ionicuser::where('username', '=', $username)->orWhere('email',$email)->first();
         if($result){
-            return response()->json(['error', 'dzer @ntrac Username-@ zbaxvac e']);
+            return response()->json(['error', 'username or email exists']);
         }
         else{
            $user =  Ionicuser::create([
