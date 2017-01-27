@@ -80,3 +80,13 @@ Route::post('/api/myauth/login',[
     'uses' => 'LoginionicController@login',
     'as'=>'login'
 ]);
+
+
+
+Route::get('api/myuser', 'MyauthController@user');
+
+Route::get('api/home', function() {
+    return View('myauth/home');
+});
+//angular users
+Route::post('api/getuser', ['uses' => 'MyauthController@getuser']);

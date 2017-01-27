@@ -4,6 +4,8 @@ appPost.controller('PostCtrl', function($scope,$http,$log) {
     }).then(function(response) {
         $scope.posts=response.data;
     });
+
+
     $scope.DeletePost = function(id){
         $http.post('delete', {
             id: id

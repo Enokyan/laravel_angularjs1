@@ -1,5 +1,3 @@
-
-
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/registr', {
         templateUrl: 'registr'
@@ -7,5 +5,4 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/login', {
         templateUrl: 'login'
     });
-
 }]);
