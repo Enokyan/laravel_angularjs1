@@ -1,16 +1,16 @@
-app.controller('mycaruselCtrl',function($scope,$interval){
+CarouselApp.controller('mycaruselCtrl',function($scope,$interval){
     $scope.data =[
         {
-            image: '/images/download1.jpg'
+            image: '/img/1480928462.jpg'
         },
         {
-            image: '/images/download2.jpg'
+            image: '/img/1480933838.jpg'
         },
         {
-            image: '/images/download3.jpg'
+            image: '/img/Chrysanthemum.jpg'
         },
         {
-            image: '/images/download4.jpg'
+            image: '/img/Desert.jpg'
         }
     ]
 

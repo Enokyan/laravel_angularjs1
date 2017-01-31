@@ -4,4 +4,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'home'
     });
 
+    $routeProvider.when('/mychat', {
+        templateUrl: 'mychat'
+    });
 }]);

@@ -18,10 +18,10 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -54,7 +54,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;<li><a href="{{ url('/createAng') }}">Add</a></li>
                         <li><a href="{{ url('api/select') }}">Result</a></li>
-                        <li><a href="{{ url('#') }}">Carousel</a></li>
+                        <li><a href="{{ url('api/carousel') }}">Carousel</a></li>
                         <li style="float:right">
                             <a href="{{ route('post.shoppingCart') }}">
                                 <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart

@@ -11,17 +11,13 @@
     <!--angularjs-->
 
 </head>
-<body ng-app="myAppCarousel" style="background-color: cadetblue">
-    <div  class='container' style='width:90%; margin-top:2%; background-color: aquamarine'>
-
-        <div ng-controller="mycaruselCtrl">
-            <span class="glyphicon glyphicon-chevron-left" ng-click="prev()"></span>
-            <img ng-src="<%image%>">
-            <span class="glyphicon glyphicon-chevron-right" ng-click="next()"></span>
-        </div>
-
-
+<body style="background-color: cadetblue"  ng-app="CarouselApp">
+    <div ng-controller="mycaruselCtrl">
+        <span class="glyphicon glyphicon-chevron-left" ng-click="prev()"></span>
+        <img ng-src="<%image%>">
+        <span class="glyphicon glyphicon-chevron-right" ng-click="next()"></span>
     </div>
+
 </body>
 
 @stop

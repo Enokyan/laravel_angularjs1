@@ -85,8 +85,37 @@ Route::post('/api/myauth/login',[
 
 Route::get('api/myuser', 'MyauthController@user');
 
+
+
+
 Route::get('api/home', function() {
     return View('myauth/home');
 });
+//api/carousel'
+
+Route::get('api/carousel', function() {
+    return View('angular/Carousel');
+});
+
+
+
+Route::get('api/mychat', 'ChatController@getChat');
+
+
+//Route::get('api/home', function() {
+//    return View('myauth/home');
+//});
+
+//send msg
+Route::post('api/sendMessage', ['uses' => 'ChatController@sendMessage']);
+
+
+
+//Select Message
+Route::post('api/SelectMessage', ['uses' => 'ChatController@SelectMessages']);
+
+//interval new message
+Route::post('api/SelectNewMessage', ['uses' => 'ChatController@SelectNewMessage']);
+
 //angular users
 Route::post('api/getuser', ['uses' => 'MyauthController@getuser']);
