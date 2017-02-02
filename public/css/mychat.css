@@ -191,9 +191,9 @@ img {
 
 .chat-box {
     position: fixed;
-    bottom: 0;
-    left: 444px;
-    right: 0;
+    bottom: 2.7%;
+    left: 47%;
+    right: 6.9%;
     padding: 15px;
     border-top: 1px solid #eee;
     transition: all .5s ease;
